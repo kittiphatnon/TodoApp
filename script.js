@@ -23,6 +23,9 @@ function createListElement() {
     dBtn.appendChild(document.createTextNode("X"));
     li.appendChild(dBtn);
     dBtn.onclick = removeParent;
+    li.addEventListener("click", function() {
+        li.classList.toggle("done");
+    }  )
 }
 
 function removeParent(evt) {
@@ -42,6 +45,11 @@ function addListAfterKeypress(event) {
     }
 }
 
+/*function taskDone {
+    li.addEventListener("click", function() {
+        li.classList.toggle("done");
+    } )
+} */
 enterButton.addEventListener("click", addListAfterClick);
 
 input.addEventListener("keypress", addListAfterKeypress);
